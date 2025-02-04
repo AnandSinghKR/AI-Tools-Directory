@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: #1E1E1E;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .tool-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: #4CAF50;
+        }
+
+        .tool-card h3 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .tool-card p {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tool-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .tool-btn:hover {
+            background: #45a049;
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #4CAF50;
+            background: transparent;
+            color: #4CAF50;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .filter-btn.active {
+            background: #4CAF50;
+            color: #ffffff;
+        }
+
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #333;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            background: #1E1E1E;
+            color: #ffffff;
+        }
+
+        .search-input:focus {
+            border-color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: #1E1E1E;
+            color: #ffffff;
+            border-top: 2px solid #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Tools Directory</h1>
+            <p class="subtitle">Your Complete Guide to AI-Powered Solutions</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search AI tools..." id="searchInput">
+        </div>
+
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="image">Image Generation</button>
+            <button class="filter-btn" data-category="video">Video Creation</button>
+            <button class="filter-btn" data-category="audio">Audio & Music</button>
+            <button class="filter-btn" data-category="text">Text & Writing</button>
+            <button class="filter-btn" data-category="coding">Development</button>
+        </div>
+
+        <div class="tools-grid">
+            <!-- AI Tool 1 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>DALL·E 2</h3>
+                <p>Create stunning, photorealistic images and art from natural language descriptions.</p>
+                <a href="https://openai.com/dall-e-2" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 2 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>Midjourney</h3>
+                <p>Generate highly artistic images with unique stylistic capabilities.</p>
+                <a href="https://midjourney.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 3 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>Stable Diffusion</h3>
+                <p>Open-source tool for generating high-quality images from text prompts.</p>
+                <a href="https://stablediffusionweb.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 4 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>ChatGPT</h3>
+                <p>Advanced language model for conversations and content generation.</p>
+                <a href="https://chat.openai.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 5 -->
+            <div class="tool-card" data-aos="fade-up" data-category="video">
+                <h3>Synthesia</h3>
+                <p>Create AI-powered videos using avatars and text-to-speech technology.</p>
+                <a href="https://www.synthesia.io" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 6 -->
+            <div class="tool-card" data-aos="fade-up" data-category="video">
+                <h3>Pictory</h3>
+                <p>Turn articles into engaging videos with this AI tool.</p>
+                <a href="https://www.pictory.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 7 -->
+            <div class="tool-card" data-aos="fade-up" data-category="audio">
+                <h3>ElevenLabs</h3>
+                <p>Create realistic voiceovers and text-to-speech audio.</p>
+                <a href="https://www.elevenlabs.io" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 8 -->
+            <div class="tool-card" data-aos="fade-up" data-category="audio">
+                <h3>Suno AI</h3>
+                <p>AI tool for creating high-quality audio and music.</p>
+                <a href="https://www.suno.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 9 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>Luma Labs AI</h3>
+                <p>AI-powered creative tools for producing stunning images and content.</p>
+                <a href="https://www.lumalabs.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 10 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Pika AI</h3>
+                <p>Generative AI tool for automatic content creation.</p>
+                <a href="https://www.pika.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 11 -->
+            <div class="tool-card" data-aos="fade-up" data-category="coding">
+                <h3>GitHub Copilot</h3>
+                <p>AI-powered code suggestions and completions for developers.</p>
+                <a href="https://copilot.github.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 12 -->
+            <div class="tool-card" data-aos="fade-up" data-category="coding">
+                <h3>Tabnine</h3>
+                <p>AI-powered code assistant to help you write better code faster.</p>
+                <a href="https://www.tabnine.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 13 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Jasper AI</h3>
+                <p>Automate content creation for blogs, websites, and social media posts.</p>
+                <a href="https://www.jasper.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 14 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Copy.ai</h3>
+                <p>Create high-converting copy for ads, social media, and more.</p>
+                <a href="https://www.copy.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 15 -->
+            <div class="tool-card" data-aos="fade-up" data-category="coding">
+                <h3>Replit</h3>
+                <p>AI-powered code editor and collaboration platform for developers.</p>
+                <a href="https://replit.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 16 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>INK Editor</h3>
+                <p>AI-powered SEO writing assistant to improve your content's ranking.</p>
+                <a href="https://inkforall.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 17 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Frase.io</h3>
+                <p>Content creation and SEO optimization tool powered by AI.</p>
+                <a href="https://www.frase.io" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 18 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>SurferSEO</h3>
+                <p>AI tool to analyze and optimize content for SEO ranking.</p>
+                <a href="https://surferseo.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 19 -->
+            <div class="tool-card" data-aos="fade-up" data-category="coding">
+                <h3>Codex</h3>
+                <p>AI-powered code assistant for writing and understanding code.</p>
+                <a href="https://openai.com/codex" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 20 -->
+            <div class="tool-card" data-aos="fade-up" data-category="audio">
+                <h3>Audo.ai</h3>
+                <p>AI tool for podcast creation and audio content optimization.</p>
+                <a href="https://audo.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 21 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Writesonic</h3>
+                <p>AI-powered tool for creating copy, articles, and other content.</p>
+                <a href="https://writesonic.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 22 -->
+            <div class="tool-card" data-aos="fade-up" data-category="video">
+                <h3>Runway ML</h3>
+                <p>Create and edit videos using AI-powered tools.</p>
+                <a href="https://runwayml.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 23 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>Artbreeder</h3>
+                <p>AI-based platform for creating and combining images.</p>
+                <a href="https://www.artbreeder.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 24 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>DeepAI</h3>
+                <p>AI-based tools for image enhancement and modification.</p>
+                <a href="https://deepai.org" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 25 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>ContentBot</h3>
+                <p>AI tool for creating high-quality content with a few clicks.</p>
+                <a href="https://contentbot.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 26 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Scalenut</h3>
+                <p>AI-powered content creation and research platform.</p>
+                <a href="https://www.scalenut.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 27 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>DreamStudio</h3>
+                <p>AI platform for generating creative visuals from text prompts.</p>
+                <a href="https://dreamstudio.ai" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 28 -->
+            <div class="tool-card" data-aos="fade-up" data-category="audio">
+                <h3>Audacity AI</h3>
+                <p>AI-enhanced audio editing and production.</p>
+                <a href="https://www.audacityteam.org" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 29 -->
+            <div class="tool-card" data-aos="fade-up" data-category="text">
+                <h3>Outwrite</h3>
+                <p>AI writing assistant to help with grammar and sentence structure.</p>
+                <a href="https://www.outwrite.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 30 -->
+            <div class="tool-card" data-aos="fade-up" data-category="coding">
+                <h3>Leetcode</h3>
+                <p>AI-driven coding interview preparation and practice platform.</p>
+                <a href="https://leetcode.com" class="tool-btn">Use</a>
+            </div>
+
+            <!-- AI Tool 31 -->
+            <div class="tool-card" data-aos="fade-up" data-category="image">
+                <h3>Runway AI</h3>
+                <p>Powerful tools for video creation and image manipulation.</p>
+                <a href="https://runwayml.com" class="tool-btn">Use</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curated by Anand Singh</p>
+        <p>© 2025 AI Tools Directory</p>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const toolCards = document.querySelectorAll('.tool-card');
+        const searchInput = document.getElementById('searchInput');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.dataset.category;
+                toolCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
